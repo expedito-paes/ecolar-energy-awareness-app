@@ -2,6 +2,16 @@
 
 Sistema acadêmico desenvolvido em Python com foco no monitoramento e conscientização sobre consumo energético residencial.
 
+## Equipe 4
+
+- Expedito Ferraz Gominho Paes - Gestor do Projeto, Pesquisa e Documentação
+
+- Lucas Veiga De Aquino Souza Leite - Desenvolvedor de software
+
+- Mario Sergio Fernandes Mendonça - Analista Técnico e Modelagem de Dados
+
+- Raquel Moura Lins Acioli - Designer de Experiência (UX)
+
 
 ## Objetivo do Projeto
 
