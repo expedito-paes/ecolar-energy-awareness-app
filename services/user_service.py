@@ -34,3 +34,16 @@ def create_user_service(name, email, birthday, profile):
     create_user_repository(user)
     
     return user, None
+
+from repositories.user_repository import (
+    get_user_by_email
+)
+
+def login_user_service(email):
+    
+    user = get_user_by_email(email)
+
+    if not user:
+        return None, "Usuário não encontrado."
+    
+    return user, None

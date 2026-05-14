@@ -61,3 +61,13 @@ def create_user_repository(user):
             f"[ERRO] Falha ao salvar usuário: "
             f"{error}"
         )
+
+def get_user_by_email(email):
+
+    users = get_all_users()
+
+    for user in users:
+        if user["email"] == email:
+            return user
+        
+    return None

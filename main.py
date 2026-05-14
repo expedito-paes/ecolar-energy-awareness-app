@@ -1,7 +1,5 @@
-from controllers.user_controller import (
-    create_user_controller
-)
+from controllers.menu_controller import start_system
 
 print("Sistema EcoLar iniciado\n")
 
-create_user_controller()
+start_system()

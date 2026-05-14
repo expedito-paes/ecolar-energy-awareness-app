@@ -1,4 +1,7 @@
-from services.user_service import create_user_service
+from services.user_service import (
+    create_user_service,
+    login_user_service
+)
 
 from services.user_appliance_service import (
     create_user_appliance_service
@@ -63,7 +66,7 @@ def create_user_controller():
             "(ou 0 para finalizar): "
         )
 
-        if appliance_id == 0:
+        if appliance_id == "0":
             break
 
         daily_usage = input(
@@ -82,3 +85,51 @@ def create_user_controller():
         )
 
     show_success("Cadastro concluído!")
+
+def login_user_controller():
+
+    email = input("\nDigite seu e-mail: ")
+
+    user, error = login_user_service(email)
+
+    if error:
+        show_error(error)
+        return
+    
+    show_success(
+        f"Bem-vindo, {user['name']}!"
+    )
+
+    user_menu_controller(user)
+
+def user_menu_controller(user):
+
+     while True:
+
+        print("\n===== MENU DO USUÁRIO =====")
+        print("1 - Atualizar cadastro")
+        print("2 - Relatórios")
+        print("3 - Gerenciar aparelhos")
+        print("4 - Excluir conta")
+        print("0 - Logout")
+
+        option = input("\nEscolha uma opção: ")
+
+        if option == "1":
+            print("Função em desenvolvimento.")
+            
+        elif option == "2":
+            print("Função em desenvolvimento.")
+            
+        elif option == "3":
+            print("Função em desenvolvimento.")
+
+        elif option == "4":
+            print("Função em desenvolvimento.")
+
+        elif option == "0":
+            print("\nLogout realizado.")
+            break
+
+        else:
+            print("\nOpção inválida.")
