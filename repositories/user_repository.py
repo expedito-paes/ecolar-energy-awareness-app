@@ -115,7 +115,7 @@ def get_next_user_id():
     # Exemplo:
     # 1 -> 001
     # 15 -> 015
-    return str(len(users) + 1).zfill(3)
+    return str(last_id + 1).zfill(3)
 
 
 
