@@ -1,3 +1,5 @@
+# appliance_view.py
+
 # def = usado para criar funções
 
 # show_appliance = função responsável por exibir

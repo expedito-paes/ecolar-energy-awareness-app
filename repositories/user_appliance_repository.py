@@ -1,3 +1,5 @@
+# user_appliance_repository.py
+
 # from = usado para importar partes especificas de outra arquivo
 # import = traz funções/classes/módulos para este arquivos
 # importa função responsável por ler arquivo txt
@@ -312,3 +314,33 @@ def delete_user_appliance_repository(
 
     # return = devolve resultado da remoção
     return removed
+
+# Função responsável por remover
+# todos os aparelhos vinculados a um usuário
+def delete_user_appliances_by_user_id(user_id):
+
+    # Busca todos os vínculos cadastrados
+    user_appliances = get_all_user_appliances()
+
+    # Lista que armazenará vínculos restantes
+    filtered_user_appliances = []
+
+    # for = percorre vínculos
+    for user_appliance in user_appliances:
+
+        # Mantém apenas vínculos
+        # de outros usuários
+        if user_appliance["user_id"] != user_id:
+
+            # Adiciona vínculo restante
+            filtered_user_appliances.append(
+                user_appliance
+            )
+
+    # Salva nova lista atualizada
+    save_all_user_appliances(
+        filtered_user_appliances
+    )
+
+    # Retorna sucesso
+    return True

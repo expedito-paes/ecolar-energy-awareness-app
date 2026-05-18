@@ -1,16 +1,4 @@
-# views = camada responsável pela interface visual/textual do sistema
-# separação de interface =
-# toda comunicação com usuário fica isolada nesta camada
-# Isso facilita:
-# - organização do código
-# - manutenção
-# - futuras melhorias
-# Exemplo:
-# Hoje usamos terminal
-# Amanhã poderia virar:
-# - interface web
-# - aplicativo
-# - interface gráfica
+# user_view.py
 
 # Sem precisar alterar services/repositories
 

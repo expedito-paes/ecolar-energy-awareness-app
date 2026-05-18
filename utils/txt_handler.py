@@ -1,3 +1,5 @@
+# txt_handler.py
+
 # Funções reutilizáveis para leitura de arquivos TXT
 # Todos os repositories utilizam este arquivo
 

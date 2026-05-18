@@ -1,3 +1,5 @@
+# appliance_repository.py
+
 # from = usado para importar partes específicas de outro arquivo
 # import = traz funções/classes/módulos para este arquivo
 # Importa função responsável por ler arquivos TXT

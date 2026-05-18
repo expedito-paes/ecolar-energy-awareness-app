@@ -1,15 +1,22 @@
 # appliance_controller.py
 # Controller responsável pelos aparelhos do sistema
 
-# Importa services
-from services.appliance_service import (
-    get_all_appliances_service,
-    get_user_appliances_by_user_service
+# Importa repositories dos aparelhos
+from repositories.appliance_repository import (
+    get_all_appliances
 )
 
-# Importa views
-from views.appliance_view import (
-    show_appliance
+# Importa repositories de vínculos usuário/aparelho
+from repositories.user_appliance_repository import (
+
+    # Busca aparelhos vinculados ao usuário
+    get_user_appliances_by_user_id,
+
+    # Busca todos os vínculos cadastrados
+    get_all_user_appliances,
+
+    # Salva lista completa atualizada
+    save_all_user_appliances
 )
 
 # Exibe aparelhos cadastrados pelo usuário
@@ -19,15 +26,22 @@ def list_user_appliances_controller(user):
 
     # Busca vínculos do usuário
     user_appliances = (
-        get_user_appliances_by_user_service(
+        get_user_appliances_by_user_id(
             user["id"]
         )
     )
 
+    # Verifica se usuário possui aparelhos
+    if not user_appliances:
+
+        print(
+            "\nNenhum aparelho cadastrado."
+        )
+
+        return
+
     # Busca aparelhos disponíveis
-    appliances = (
-        get_all_appliances_service()
-    )
+    appliances = get_all_appliances()
 
     # Percorre vínculos
     for user_appliance in user_appliances:
@@ -35,7 +49,6 @@ def list_user_appliances_controller(user):
         # Procura aparelho correspondente
         for appliance in appliances:
 
-            # Verifica correspondência
             if (
                 appliance["id"]
                 ==
@@ -47,11 +60,50 @@ def list_user_appliances_controller(user):
                 )
 
                 print(
-                    f"Uso diário: "
+                    f"Tempo diário: "
                     f"{user_appliance['daily_usage']} min"
                 )
 
                 print(
-                    f"Dias no mês: "
+                    f"Dias mensais: "
                     f"{user_appliance['monthly_days']}"
                 )
+
+# Função responsável por remover
+# todos os aparelhos vinculados
+# a um usuário específico
+
+def delete_user_appliances_by_user_id(user_id):
+
+    # Busca todos os vínculos cadastrados
+    user_appliances = (
+        get_all_user_appliances()
+    )
+
+    # Lista que armazenará apenas
+    # vínculos que NÃO pertencem
+    # ao usuário removido
+    filtered_user_appliances = []
+
+    # for = percorre todos os vínculos
+    for user_appliance in user_appliances:
+
+        # Verifica se vínculo atual
+        # pertence a outro usuário
+        if (
+            user_appliance["user_id"]
+            !=
+            user_id
+        ):
+
+            # append() = adiciona vínculo
+            # na nova lista filtrada
+            filtered_user_appliances.append(
+                user_appliance
+            )
+
+    # Salva lista atualizada
+    # sem os vínculos removidos
+    save_all_user_appliances(
+        filtered_user_appliances
+    )

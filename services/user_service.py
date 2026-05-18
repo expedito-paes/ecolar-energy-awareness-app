@@ -1,3 +1,5 @@
+# user_service.py
+
 # Services = camada responsável pela lógica do sistema
 # Aqui ficam:
 # - validações

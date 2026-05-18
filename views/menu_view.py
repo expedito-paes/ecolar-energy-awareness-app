@@ -1,3 +1,5 @@
+# menu_view.py
+
 # def = usado para criar funções
 # show_main_menu = função responsável por exibir
 # o menu principal do sistema
@@ -27,9 +29,10 @@ def show_user_menu():
     # opções do sistema
     print("1 - Meu Perfil")
     print("2 - Meus aparelhos")
-    print("3 - Consumo energético")
-    print("4 - Relatórios")
-    print("5 - Recomendações")
-    print("6 - Simular Economia")
-    print("7 - Excluir Conta")
+    print("3 - Atualizar cadastro")
+    print("4 - Consumo energético")
+    print("5 - Relatórios")
+    print("6 - Recomendações")
+    print("7 - Simular Economia")
+    print("8 - Excluir Conta")
     print("0 - Logout")
