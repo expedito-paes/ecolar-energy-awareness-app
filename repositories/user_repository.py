@@ -320,13 +320,6 @@ def update_user_repository(updated_user):
     # return False = atualização não realizada
     return False
 
-
-
-
-    # Caso não encontre usuário
-    # None = ausência de valor
-    return None
-
 # Função responsável por remover usuário do sistema
 def delete_user_repository(user_id):
 

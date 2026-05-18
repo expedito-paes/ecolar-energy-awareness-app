@@ -4,8 +4,6 @@
 # centralizado = todas as validações ficam em um único lugar
 # reutilizável = mesmas funções podem ser usadas em vários arquivos
 
-
-
 # def = usado para criar funções
 
 # validate_name = função responsável por validar nomes

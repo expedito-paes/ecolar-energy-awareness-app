@@ -1,13 +1,10 @@
 # appliance_controller.py
 # Controller responsável pelos aparelhos do sistema
 
-# Importa repositories
-from repositories.appliance_repository import (
-    get_all_appliances
-)
-
-from repositories.user_appliance_repository import (
-    get_user_appliances_by_user_id
+# Importa services
+from services.appliance_service import (
+    get_all_appliances_service,
+    get_user_appliances_by_user_service
 )
 
 # Importa views
@@ -22,11 +19,15 @@ def list_user_appliances_controller(user):
 
     # Busca vínculos do usuário
     user_appliances = (
-        get_user_appliances_by_user_id(user["id"])
+        get_user_appliances_by_user_service(
+            user["id"]
+        )
     )
 
     # Busca aparelhos disponíveis
-    appliances = get_all_appliances()
+    appliances = (
+        get_all_appliances_service()
+    )
 
     # Percorre vínculos
     for user_appliance in user_appliances:

@@ -1,17 +1,10 @@
 # report_controller.py
 # Controller responsável pelos relatórios do sistema
 
-# Importa repositories
-from repositories.user_appliance_repository import (
-    get_user_appliances_by_user_id
-)
-
-from repositories.appliance_repository import (
-    get_all_appliances
-)
-
-from repositories.tip_repository import (
-    get_all_tips
+from services.report_service import (
+    get_consumption_report_service,
+    get_recommendations_service,
+    get_simulation_service
 )
 
 # Exibe relatório simples de consumo
@@ -19,48 +12,25 @@ def show_consumption_report_controller(user):
 
     print("\n===== RELATÓRIO ENERGÉTICO =====")
 
-    # Busca aparelhos do usuário
-    user_appliances = (
-        get_user_appliances_by_user_id(user["id"])
+    # Busca dados do relatório
+    report = get_consumption_report_service(
+        user["id"]
     )
 
-    # Busca aparelhos cadastrados
-    appliances = get_all_appliances()
+    # Percorre aparelhos
+    for appliance in report["appliances"]:
 
-    # Variável acumuladora
-    total_consumption = 0
+        print(f"\n{appliance['name']}")
 
-    # Percorre aparelhos do usuário
-    for user_appliance in user_appliances:
-
-        # Procura aparelho correspondente
-        for appliance in appliances:
-
-            # Verifica correspondência
-            if (
-                appliance["id"]
-                ==
-                user_appliance["appliance_id"]
-            ):
-
-                print(
-                    f"\n{appliance['name']}"
-                )
-
-                print(
-                    f"Consumo base: "
-                    f"{appliance['consumption']} kWh"
-                )
-
-                # Soma consumo
-                total_consumption += (
-                    appliance["consumption"]
-                )
+        print(
+            f"Consumo base: "
+            f"{appliance['consumption']} kWh"
+        )
 
     # Exibe total
     print(
         f"\nConsumo total estimado: "
-        f"{total_consumption} kWh"
+        f"{report['total_consumption']} kWh"
     )
 
 # Exibe recomendações energéticas
@@ -68,58 +38,30 @@ def show_recommendations_controller(user):
 
     print("\n===== RECOMENDAÇÕES =====")
 
-    # Busca aparelhos do usuário
-    user_appliances = (
-        get_user_appliances_by_user_id(user["id"])
+    # Busca recomendações
+    recommendations = (
+        get_recommendations_service(
+            user["id"]
+        )
     )
 
-    # Busca aparelhos
-    appliances = get_all_appliances()
+    # Percorre recomendações
+    for recommendation in recommendations:
 
-    # Busca dicas
-    tips = get_all_tips()
+        print(f"\n{recommendation['name']}")
 
-    # Percorre vínculos
-    for user_appliance in user_appliances:
+        for tip in recommendation["tips"]:
 
-        # Procura aparelho correspondente
-        for appliance in appliances:
-
-            if (
-                appliance["id"]
-                ==
-                user_appliance["appliance_id"]
-            ):
-
-                print(
-                    f"\n{appliance['name']}"
-                )
-
-                # Busca dicas do aparelho
-                for tip in tips:
-
-                    if (
-                        tip["appliance"]
-                        ==
-                        appliance["name"]
-                    ):
-
-                        print(
-                            f"- {tip['tip']}"
-                        )
-
+            print(f"- {tip}")
 
 # Simulação simples de economia
 def show_simulation_controller(user):
 
     print("\n===== SIMULAÇÃO DE ECONOMIA =====")
 
-    print(
-        "\nReduzindo 30 minutos diários "
-        "de uso em aparelhos de alto consumo."
-    )
+    # Busca dados da simulação
+    simulation = get_simulation_service()
 
-    print(
-        "\nEconomia estimada: "
-        "5% a 15% ao mês."
-    )
+    print(f"\n{simulation['message']}")
+
+    print(f"\n{simulation['economy']}")

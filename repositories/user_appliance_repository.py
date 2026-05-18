@@ -15,7 +15,7 @@ def get_all_user_appliances():
     # "./data/user_appliances.txt" = caminho do arquivo
     # 4 = quantidade esperada de colunas por linha
     data_list = read_txt_file(
-        "./data/user_appliance.txt", 
+        "./data/user_appliances.txt", 
         4
     )
 

@@ -59,16 +59,6 @@ EcoLar/
 │   ├── user_appliances.txt
 │   ├── users.txt
 │
-├── models/
-│   ├── __init__.py
-│   ├── appliance.py
-│   ├── user.py
-│   ├── category.py
-│   ├── tip.py
-│   ├── consumption_level.py
-│   ├── history.py
-│   ├── user_appliance.py
-│
 ├── repositories/
 │   ├── __init__.py
 │   ├── user_repository.py
@@ -85,9 +75,7 @@ EcoLar/
 │   ├── user_appliance_service.py
 │   ├── appliance_service.py
 │   ├── consumption_service.py
-│   ├── report_service.py
 │   ├── recommendation_service.py
-|   ├── history_service.py
 │
 ├── controllers/
 │   ├── __init__.py
@@ -98,9 +86,7 @@ EcoLar/
 │
 ├── utils/
 │   ├── __init__.py
-│   ├── constants.py
 │   ├── formatter.py
-│   ├── helpers.py
 │   ├── txt_handler.py
 │   ├── validators.py
 │
@@ -111,11 +97,6 @@ EcoLar/
 │   ├── menu_view.py
 │   ├── user_view.py
 │   ├── report_view.py
-│
-├── tests/
-│   ├── test_users.py
-│   ├── test_consumption.py
-│   ├── test_reports.py
 │
 ├── docs
 |   ├── arquitetura.md

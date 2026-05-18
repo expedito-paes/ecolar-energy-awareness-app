@@ -12,13 +12,20 @@ from services.user_appliance_service import (
     create_user_appliance_service
 )
 
-# Importa repositories
-from repositories.appliance_repository import (
-    get_all_appliances
+# Importa services auxiliares
+from services.appliance_service import (
+    get_all_appliances_service
 )
 
-from repositories.consumption_repository import (
-    get_all_consumption_levels
+from services.consumption_service import (
+    get_consumption_levels_service
+)
+
+# Importa controllers de relatórios
+from controllers.report_controller import (
+    show_consumption_report_controller,
+    show_recommendations_controller,
+    show_simulation_controller
 )
 
 # Importa views do usuário
@@ -69,7 +76,7 @@ def create_user_controller():
     birthday = get_user_birthday()
 
     # Busca perfis disponíveis
-    levels = get_all_consumption_levels()
+    levels = get_consumption_levels_service()
 
     # Exibe perfis
     show_consumption_levels(levels)
@@ -151,22 +158,22 @@ def user_menu_controller(user):
         # Consumo energético
         elif option == "3":
 
-            print("\nFunção em desenvolvimento.")
+            show_consumption_report_controller(user)
 
         # Relatórios
         elif option == "4":
 
-            print("\nFunção em desenvolvimento.")
+            show_consumption_report_controller(user)
 
         # Recomendações
         elif option == "5":
 
-            print("\nFunção em desenvolvimento.")
+            show_recommendations_controller(user)
 
         # Simulação
         elif option == "6":
 
-            print("\nFunção em desenvolvimento.")
+            show_simulation_controller(user)
 
         # Excluir conta
         elif option == "7":
@@ -189,7 +196,7 @@ def show_profile_controller(user):
 def add_user_appliance_controller(user):
 
     # Busca aparelhos disponíveis
-    appliances = get_all_appliances()
+    appliances = get_all_appliances_service()
 
     # Exibe aparelhos
     show_appliance(appliances)
