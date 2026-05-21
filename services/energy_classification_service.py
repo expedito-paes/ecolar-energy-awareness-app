@@ -1,126 +1,94 @@
 # energy_classification_service.py
-# Service para CLASSIFICAR consumo de energia
-# VERSAO MUITO SIMPLES COM IF/ELIF/ELSE
 
 from services.consumption_service import (
-    calcular_consumo_usuario,
-    calcular_custo
+    calculate_user_consumption,
+    calculate_cost
 )
 
 
-# FUNCAO: Classifica consumo do usuario
-def classificar_consumo(id_usuario):
+def classify_consumption(user_id):
 
-    # Calcula consumo total
-    consumo = calcular_consumo_usuario(id_usuario)
+    consumption = calculate_user_consumption(user_id)
 
-    # Variavel para guardar a classificacao
-    classificacao = ""
+    classification = ""
 
-    # IF/ELIF/ELSE = estrutura de decisao
+    if consumption <= 50:
 
-    # IF 1: Verifica se consumo eh muito baixo
-    if consumo <= 50:
+        classification = "MUITO BAIXO"
 
-        classificacao = "MUITO BAIXO"
+    elif consumption <= 100:
 
-    # ELIF 2: Verifica se consumo eh baixo
-    elif consumo <= 100:
+        classification = "BAIXO"
 
-        classificacao = "BAIXO"
+    elif consumption <= 150:
 
-    # ELIF 3: Verifica se consumo eh medio
-    elif consumo <= 150:
+        classification = "MEDIO"
 
-        classificacao = "MEDIO"
+    elif consumption <= 250:
 
-    # ELIF 4: Verifica se consumo eh alto
-    elif consumo <= 250:
+        classification = "ALTO"
 
-        classificacao = "ALTO"
-
-    # ELSE: Consumo eh muito alto
     else:
 
-        classificacao = "MUITO ALTO"
+        classification = "MUITO ALTO"
 
-    # Retorna a classificacao
     return {
-        "consumo_kwh": consumo,
-        "classificacao": classificacao
+        "consumption_kwh": consumption,
+        "classification": classification
     }
 
 
-# FUNCAO: Compara consumo com media nacional
-def comparar_com_media(id_usuario):
+def compare_with_average(user_id):
 
-    # Calcula consumo do usuario
-    consumo_usuario = calcular_consumo_usuario(id_usuario)
+    user_consumption = calculate_user_consumption(user_id)
 
-    # Media nacional eh 150 kWh por mes
-    media_nacional = 150
+    national_average = 150
 
-    # Variavel para resultado
     status = ""
 
-    # IF: Verifica se usuario consome MAIS que media
-    if consumo_usuario > media_nacional:
+    if user_consumption > national_average:
 
         status = "ACIMA"
 
-    # ELIF: Verifica se consome IGUAL a media
-    elif consumo_usuario == media_nacional:
+    elif user_consumption == national_average:
 
         status = "IGUAL"
 
-    # ELSE: Consome MENOS que media
     else:
 
         status = "ABAIXO"
 
-    # Retorna resultado
     return {
-        "consumo_usuario_kwh": consumo_usuario,
-        "media_nacional_kwh": media_nacional,
+        "user_consumption_kwh": user_consumption,
+        "national_average_kwh": national_average,
         "status": status
     }
 
 
-# FUNCAO: Classifica por faixa de consumo
-def classificar_por_faixa(id_usuario):
+def classify_by_range(user_id):
 
-    # Calcula consumo
-    consumo = calcular_consumo_usuario(id_usuario)
+    consumption = calculate_user_consumption(user_id)
 
-    # Variavel para guardar faixa
-    faixa = ""
+    range_class = ""
 
-    # IF/ELIF/ELSE para classificar em FAIXAS
+    if consumption < 30:
 
-    # Faixa 1: Consumo muito baixo (0-30 kWh)
-    if consumo < 30:
+        range_class = "FAIXA 1: Minimo (0-30 kWh)"
 
-        faixa = "FAIXA 1: Minimo (0-30 kWh)"
+    elif consumption < 60:
 
-    # Faixa 2: Consumo baixo (30-60 kWh)
-    elif consumo < 60:
+        range_class = "FAIXA 2: Baixo (30-60 kWh)"
 
-        faixa = "FAIXA 2: Baixo (30-60 kWh)"
+    elif consumption < 100:
 
-    # Faixa 3: Consumo medio (60-100 kWh)
-    elif consumo < 100:
+        range_class = "FAIXA 3: Medio (60-100 kWh)"
 
-        faixa = "FAIXA 3: Medio (60-100 kWh)"
+    elif consumption < 150:
 
-    # Faixa 4: Consumo alto (100-150 kWh)
-    elif consumo < 150:
+        range_class = "FAIXA 4: Alto (100-150 kWh)"
 
-        faixa = "FAIXA 4: Alto (100-150 kWh)"
-
-    # Faixa 5: Consumo muito alto (150+ kWh)
     else:
 
-        faixa = "FAIXA 5: Muito Alto (150+ kWh)"
+        range_class = "FAIXA 5: Muito Alto (150+ kWh)"
 
-    # Retorna faixa
-    return faixa
+    return range_class
