@@ -8,7 +8,7 @@ Sistema acadêmico desenvolvido em Python com foco no monitoramento e conscienti
 
 - Lucas Veiga De Aquino Souza Leite - Desenvolvedor de software
 
-- Mario Sergio Fernandes Mendonça - Analista Técnico e Modelagem de Dados
+- Mario Sergio Fernandes Mendonça - Analista Técnico
 
 - Raquel Moura Lins Acioli - Designer de Experiência (UX)
 
