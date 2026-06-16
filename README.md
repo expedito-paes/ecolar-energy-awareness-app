@@ -10,8 +10,6 @@ Sistema acadêmico desenvolvido em Python com foco no monitoramento, análise e 
 
 * Lucas Veiga de Aquino Souza Leite — Desenvolvimento de Software e Regras de Negócio
 
-* Mario Sergio Fernandes Mendonça — Apoio Técnico e Pesquisa
-
 * Raquel Moura Lins Acioli — Experiência do Usuário (UX), Interface Textual e Organização Visual
 
 ---
