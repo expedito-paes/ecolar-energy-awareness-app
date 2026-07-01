@@ -1,122 +1,165 @@
 # 🌱 EcoLar
 
-> Aplicação desenvolvida em Python para monitoramento e análise do consumo energético residencial, incentivando hábitos mais sustentáveis por meio de estimativas de gasto, simulações de economia e recomendações de uso consciente da energia.
+> **Aplicação desenvolvida em Python para monitoramento e análise do consumo energético residencial, promovendo a conscientização sobre o uso eficiente da energia elétrica por meio de estimativas de consumo, simulações de economia e recomendações voltadas à sustentabilidade.**
 
 ---
 
-## 📌 Visão Geral
+# 📌 Visão Geral
 
-O **EcoLar** é um projeto acadêmico desenvolvido na disciplina **Projeto 1** do curso de **Graduação em Gestão da Tecnologia da Informação (GTI) da CESAR School**.
+O **EcoLar** é um projeto desenvolvido durante a disciplina **Projeto 1** do curso de **Graduação em Gestão da Tecnologia da Informação (GTI)** da **CESAR School**, tendo como tema central a **Transição Energética**.
 
-A proposta surgiu a partir do desafio de **Transição Energética**, buscando criar uma solução simples, acessível e educativa para ajudar usuários a compreenderem como seus hábitos influenciam o consumo de energia elétrica em suas residências.
+O projeto surgiu a partir da necessidade de incentivar o consumo consciente de energia elétrica nas residências, oferecendo aos usuários uma ferramenta simples e intuitiva capaz de estimar o consumo dos aparelhos domésticos, calcular custos aproximados e fornecer recomendações que auxiliem na redução do desperdício energético.
 
-Por meio do cadastro de aparelhos, cálculos automáticos de consumo e relatórios personalizados, o sistema promove maior conscientização sobre o uso eficiente da energia, incentivando mudanças de comportamento que contribuam para a sustentabilidade.
+Além do desenvolvimento da solução, o projeto proporcionou a aplicação prática de conceitos de engenharia de software, arquitetura de sistemas, gestão de projetos, colaboração em equipe e desenvolvimento orientado à resolução de problemas reais.
 
 ---
 
-## 🎯 Objetivo do Projeto
+# 🎯 Objetivos do Projeto
 
 Desenvolver uma aplicação capaz de:
 
 * Monitorar o consumo energético de aparelhos residenciais;
-* Estimar gastos financeiros relacionados ao uso da energia elétrica;
-* Apresentar relatórios e comparativos de consumo;
+* Estimar gastos financeiros relacionados ao consumo de energia elétrica;
+* Gerar relatórios para acompanhamento do consumo;
 * Simular cenários de economia energética;
-* Incentivar práticas mais sustentáveis através de recomendações e orientações educativas.
+* Incentivar hábitos sustentáveis por meio de recomendações educativas;
+* Promover a conscientização sobre o uso eficiente da energia.
 
 ---
 
-## 📊 Informações do Projeto
+# 🏆 Principais Resultados Alcançados
 
-| Item                        | Detalhes                                 |
-| --------------------------- | ---------------------------------------- |
-| Tipo                        | Projeto Acadêmico                        |
-| Curso                       | Gestão da Tecnologia da Informação (GTI) |
-| Instituição                 | CESAR School                             |
-| Disciplina                  | Projeto 1                                |
-| Tema                        | Transição Energética                     |
-| Linguagem Principal         | Python                                   |
-| Arquitetura                 | Modular em Camadas                       |
-| Persistência                | Arquivos TXT                             |
-| Ambiente de Desenvolvimento | Visual Studio Code                       |
-| Controle de Versão          | Git e GitHub                             |
-| Status                      | Concluído                                |
+Ao final do projeto foram alcançados os seguintes resultados:
+
+* Desenvolvimento de uma aplicação funcional em Python utilizando arquitetura modular em camadas;
+* Implementação de um sistema completo para gerenciamento de usuários e aparelhos elétricos;
+* Automatização do cálculo de consumo energético (kWh) e estimativa de custos mensais;
+* Geração de relatórios individuais de consumo;
+* Implementação de simulações de economia energética;
+* Disponibilização de recomendações para redução do consumo de energia;
+* Organização do projeto seguindo princípios de separação de responsabilidades;
+* Utilização de Git e GitHub durante todo o desenvolvimento colaborativo;
+* Documentação técnica estruturada do projeto;
+* Aplicação de práticas de gestão de projetos durante todas as etapas de desenvolvimento.
+
+O projeto demonstrou a viabilidade de uma solução tecnológica voltada à educação energética, reunindo informações de consumo em uma única plataforma e incentivando mudanças de comportamento que contribuem para a sustentabilidade.
 
 ---
 
-## 🚀 Principais Funcionalidades
+# ✨ Destaques
 
-### 👤 Gestão de Usuários
+* 🔋 Monitoramento do consumo energético residencial
+* 💰 Estimativa de gastos com energia elétrica
+* 📊 Relatórios personalizados de consumo
+* 📉 Simulação de economia energética
+* 🌱 Incentivo ao consumo consciente
+* 🏗️ Arquitetura modular em camadas
+* 🔄 Controle de versão utilizando Git e GitHub
+* 👥 Desenvolvimento colaborativo
+* 🎓 Projeto acadêmico baseado em um problema real
+
+---
+
+# 📊 Informações do Projeto
+
+| Item                | Descrição                                |
+| ------------------- | ---------------------------------------- |
+| Projeto             | EcoLar                                   |
+| Tipo                | Projeto Acadêmico                        |
+| Curso               | Gestão da Tecnologia da Informação (GTI) |
+| Instituição         | CESAR School                             |
+| Disciplina          | Projeto 1                                |
+| Tema                | Transição Energética                     |
+| Linguagem Principal | Python                                   |
+| Arquitetura         | Modular em Camadas                       |
+| Persistência        | Arquivos TXT                             |
+| IDE                 | Visual Studio Code                       |
+| Controle de Versão  | Git e GitHub                             |
+| Status              | Concluído                                |
+
+---
+
+# 🚀 Principais Funcionalidades
+
+## 👤 Gestão de Usuários
 
 * Cadastro de usuários;
-* Login simplificado;
+* Autenticação simplificada;
 * Atualização de dados cadastrais;
-* Exclusão de conta.
+* Exclusão de contas.
 
-### 🔌 Gestão de Aparelhos
+## 🔌 Gestão de Aparelhos
 
-* Cadastro de aparelhos vinculados ao usuário;
+* Cadastro de aparelhos por usuário;
 * Organização por categorias;
-* Atualização do tempo de uso;
-* Remoção de aparelhos cadastrados.
+* Atualização das informações cadastradas;
+* Exclusão de aparelhos.
 
-### ⚡ Monitoramento Energético
+## ⚡ Monitoramento Energético
 
-* Cálculo do consumo energético em kWh;
-* Estimativa de custo mensal;
+* Cálculo automático do consumo em kWh;
+* Estimativa do custo mensal;
 * Classificação energética;
-* Comparação com médias de consumo;
-* Identificação de padrões de uso.
+* Comparação de consumo;
+* Identificação de padrões de utilização.
 
-### 📈 Relatórios e Simulações
+## 📈 Relatórios e Simulações
 
 * Relatórios individuais por aparelho;
-* Simulações de redução de consumo;
-* Estimativas de economia financeira;
-* Recomendações para uso mais eficiente da energia;
-* Dicas educativas voltadas à conscientização energética.
+* Simulações de economia energética;
+* Estimativa de redução de gastos;
+* Recomendações para uso consciente;
+* Dicas educativas sobre eficiência energética.
 
-### 🛡️ Robustez e Qualidade
+## 🛡️ Qualidade da Aplicação
 
-* Persistência de dados em arquivos TXT;
-* Tratamento de erros e inconsistências;
+* Persistência dos dados em arquivos TXT;
 * Validação centralizada das entradas;
-* Organização estrutural dos dados;
-* Separação de responsabilidades entre os módulos.
+* Tratamento de exceções;
+* Organização estrutural do código;
+* Separação das responsabilidades entre os módulos.
 
 ---
 
-## 🏗️ Arquitetura do Sistema
+# 🏗️ Arquitetura do Sistema
 
-O EcoLar foi desenvolvido utilizando uma **arquitetura modular baseada em camadas**, visando facilitar manutenção, reutilização de código e escalabilidade futura.
+O EcoLar foi desenvolvido utilizando uma arquitetura modular em camadas, favorecendo a organização do código, manutenção, reutilização de componentes e escalabilidade.
 
-### Estrutura Arquitetural
+```
+Views
+│
+├── Controllers
+│
+├── Services
+│
+├── Repositories
+│
+└── Utils
+```
 
-* **Views**
+### Views
 
-  * Responsáveis pela interface textual e interação com o usuário.
+Responsáveis pela interação com o usuário através da interface textual.
 
-* **Controllers**
+### Controllers
 
-  * Coordenam o fluxo da aplicação e integram os módulos.
+Coordenam o fluxo da aplicação e realizam a comunicação entre as camadas.
 
-* **Services**
+### Services
 
-  * Implementam as regras de negócio e os cálculos do sistema.
+Implementam as regras de negócio e os cálculos relacionados ao consumo energético.
 
-* **Repositories**
+### Repositories
 
-  * Gerenciam a persistência e recuperação dos dados.
+Gerenciam a persistência e recuperação das informações.
 
-* **Utils**
+### Utils
 
-  * Disponibilizam funções auxiliares, validações e formatações.
-
-Essa organização promove maior clareza estrutural e reduz o acoplamento entre componentes.
+Disponibilizam funções auxiliares, validações, formatações e utilidades compartilhadas.
 
 ---
 
-## 📂 Estrutura do Projeto
+# 📂 Estrutura do Projeto
 
 ```text
 EcoLar/
@@ -125,42 +168,42 @@ EcoLar/
 ├── README.md
 ├── requirements.txt
 │
-├── data/
-├── repositories/
-├── services/
 ├── controllers/
-├── utils/
+├── services/
+├── repositories/
 ├── views/
+├── utils/
+├── data/
 └── docs/
 ```
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+# 🛠️ Tecnologias Utilizadas
 
-* Python 3;
-* Git;
-* GitHub;
-* Visual Studio Code;
-* Arquivos TXT para persistência de dados.
+* Python 3
+* Git
+* GitHub
+* Visual Studio Code
+* Arquivos TXT para persistência de dados
 
 ---
 
-## ▶️ Como Executar o Projeto
+# ▶️ Como Executar o Projeto
 
-### 1. Clone o repositório
+## 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/expedito-paes/ecolar-energy-awareness-app.git
 ```
 
-### 2. Acesse a pasta do projeto
+## 2. Acessar a pasta
 
 ```bash
 cd ecolar-energy-awareness-app
 ```
 
-### 3. Execute a aplicação
+## 3. Executar a aplicação
 
 ```bash
 python main.py
@@ -168,75 +211,84 @@ python main.py
 
 ---
 
-## 👥 Equipe do Projeto
+# 👥 Equipe
 
-Projeto desenvolvido pela **Equipe 4** da disciplina Projeto 1.
+## Expedito Ferraz Gominho Paes
 
-### Expedito Ferraz Gominho Paes
+**Gerente do Projeto**
 
-* Gestão do projeto;
-* Planejamento e organização das atividades;
-* Definição da arquitetura do sistema;
-* Integração dos módulos desenvolvidos;
-* Estruturação do fluxo de versionamento com Git;
+* Planejamento e gestão das atividades;
+* Organização do cronograma;
+* Definição da arquitetura da aplicação;
+* Estruturação do fluxo de versionamento;
+* Integração dos módulos;
 * Documentação técnica e acadêmica;
-* Apoio nos testes e estabilização da solução.
+* Apoio aos testes e validação da solução.
 
-### Lucas Veiga de Aquino Souza Leite
+## Lucas Veiga de Aquino Souza Leite
 
-* Desenvolvimento de software;
-* Implementação das regras de negócio;
-* Construção das funcionalidades do sistema.
+**Desenvolvedor**
 
-### Raquel Moura Lins Acioli
+* Implementação das funcionalidades;
+* Desenvolvimento das regras de negócio;
+* Construção dos módulos da aplicação.
 
-* Experiência do usuário (UX);
-* Organização visual;
-* Estruturação da interface textual;
+## Raquel Moura Lins Acioli
+
+**UX e Organização da Interface**
+
+* Estruturação da experiência do usuário;
+* Organização da interface textual;
 * Apoio à usabilidade da aplicação.
 
 ---
 
-## 💡 Aprendizados Obtidos
+# 💡 Competências Desenvolvidas
 
-O desenvolvimento do EcoLar proporcionou experiências práticas relacionadas a:
+Durante o desenvolvimento do projeto foram aplicados conhecimentos relacionados a:
 
-* Trabalho colaborativo em equipes multidisciplinares;
-* Gestão de projetos de tecnologia;
+* Gestão de Projetos;
+* Engenharia de Software;
+* Arquitetura de Sistemas;
+* Programação em Python;
+* Controle de Versão com Git e GitHub;
+* Organização modular de aplicações;
+* Trabalho colaborativo;
+* Comunicação entre equipes;
 * Planejamento e acompanhamento de entregas;
-* Controle de versão utilizando Git e GitHub;
-* Aplicação de arquitetura modular;
-* Separação de responsabilidades;
-* Desenvolvimento orientado à resolução de problemas reais;
-* Comunicação e integração entre áreas técnicas e de gestão.
+* Documentação técnica;
+* Resolução de problemas reais por meio da tecnologia.
 
 ---
 
-## 🔮 Possíveis Evoluções Futuras
+# 🔮 Evoluções Futuras
 
-Embora o projeto tenha sido concluído para fins acadêmicos, algumas melhorias podem expandir seu potencial:
+O EcoLar possui potencial para evolução por meio da implementação de novas funcionalidades, como:
 
-* Persistência em banco de dados relacional;
-* Interface gráfica ou aplicação web;
-* Dashboards analíticos de consumo;
+* Banco de dados relacional;
+* Interface gráfica;
+* Aplicação Web;
+* Aplicação Mobile;
+* Dashboard analítico;
 * Exportação de relatórios em PDF;
 * Integração com APIs de tarifas energéticas;
 * Cadastro automatizado de aparelhos;
-* Geração de indicadores personalizados;
-* Aplicação mobile.
+* Indicadores personalizados de consumo.
 
 ---
 
-## ✅ Status do Projeto
+# ✅ Status do Projeto
 
-**Projeto concluído para fins acadêmicos, com funcionalidades implementadas, integração realizada e documentação estruturada.**
+**Projeto concluído com sucesso** no contexto da disciplina **Projeto 1** da **CESAR School**.
 
-O EcoLar representa a aplicação prática de conceitos de desenvolvimento de software, arquitetura, gestão de projetos e trabalho em equipe, contribuindo para a formação técnica e profissional dos integrantes envolvidos.
+O EcoLar representa a aplicação prática de conceitos de desenvolvimento de software, arquitetura de sistemas, gestão de projetos, controle de versão e trabalho colaborativo, além de demonstrar como soluções tecnológicas podem contribuir para a conscientização sobre o consumo sustentável de energia elétrica.
 
 ---
 
-## 🎓 Instituição
+# 🎓 Instituição
 
 **CESAR School**
+
 Graduação em Gestão da Tecnologia da Informação (GTI)
+
 Disciplina: Projeto 1
